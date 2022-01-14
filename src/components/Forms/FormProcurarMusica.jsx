@@ -8,15 +8,23 @@ import QueueMusicIcon from "@material-ui/icons/QueueMusic";
 
 import { Formik, Form } from "formik";
 import TextField from "../TextField";
+import useLyrics from "../../hooks/useLyrics";
+import useLinearProgress from "../../hooks/useLinearProgress";
+
+import LinearProgress from "../Progress/Linear";
 
 export default function FormProcurarMusica() {
+  const { buscar } = useLyrics();
+  const LoadingLinear = useLinearProgress();
   return (
     <Box mt={3}>
+      <LinearProgress aberto={LoadingLinear.loading} />
       <Formik
         initialValues={{
           artista: "",
           titulo: "",
         }}
+        onSubmit={(values, actions) => buscar(values, actions.LoadingLinear)}
       >
         <Form>
           <Home.FormProcuarMusica>
@@ -36,7 +44,7 @@ export default function FormProcurarMusica() {
             </Box>
           </Home.FormProcuarMusica>
           <Box mt={3} display="flex" justifyContent="center">
-            <Button variant="contained" color="primary">
+            <Button type="submit" variant="contained" color="primary">
               Pesquisar
             </Button>
           </Box>
