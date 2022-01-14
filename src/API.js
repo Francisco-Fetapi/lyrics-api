@@ -6,8 +6,8 @@ const lyrics = axios.create({
 
 const api = {
   async getLegenda(artista, titulo) {
-    const { data } = await lyrics.get(artista + "/" + titulo);
-    return data;
+    const res = await lyrics.get(artista + "/" + titulo);
+    return res;
   },
 };
 

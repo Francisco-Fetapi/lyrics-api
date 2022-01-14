@@ -10,7 +10,7 @@ function useLyrics() {
 
   const dados = {
     lyric,
-    async buscar({ artista, titulo }, actions, LoadingLinear) {
+    async buscar({ artista, titulo }, actions, LoadingLinear, alertar) {
       if (!artista) {
         actions.setErrors({ artista: "Este campo não pode estar vazio" });
       } else if (!titulo) {
@@ -19,12 +19,11 @@ function useLyrics() {
         LoadingLinear.mostrar();
         try {
           let res = await API.getLegenda(artista, titulo);
-          Dispatch(SET_STATE("lyric", res.lyrics));
+          Dispatch(SET_STATE("lyric", res.data.lyrics));
         } catch (err) {
-          Dispatch(SET_STATE("lyric", ""));
+          alertar("ocorreu algum problema ao pesquisar", "error", 3);
           console.log(err);
         }
-        // console.log(res);
         LoadingLinear.ocultar();
       }
     },

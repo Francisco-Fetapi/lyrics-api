@@ -11,20 +11,27 @@ import TextField from "../TextField";
 import useLyrics from "../../hooks/useLyrics";
 import useLinearProgress from "../../hooks/useLinearProgress";
 
+import useAlert from "../../hooks/useAlert";
+
 import LinearProgress from "../Progress/Linear";
+import Alerta from "../Alerta";
 
 export default function FormProcurarMusica() {
   const { buscar, lyric, limpar } = useLyrics();
   const LoadingLinear = useLinearProgress();
+  const { alertar, alert, fechar } = useAlert();
   return (
     <Box mt={3}>
       <LinearProgress aberto={LoadingLinear.loading} />
+      <Alerta alert={alert} fechar={fechar} />
       <Formik
         initialValues={{
           artista: "",
           titulo: "",
         }}
-        onSubmit={(values, actions) => buscar(values, actions, LoadingLinear)}
+        onSubmit={(values, actions) =>
+          buscar(values, actions, LoadingLinear, alertar)
+        }
       >
         {(actions) => (
           <Form>

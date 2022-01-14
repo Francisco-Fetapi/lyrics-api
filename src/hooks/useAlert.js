@@ -15,7 +15,6 @@ export default function useAlert() {
       setAlert({ open: true, msg, status, tempo });
     },
     fechar() {
-      console.log(alert);
       setAlert({ ...alert, open: false });
     },
   };
