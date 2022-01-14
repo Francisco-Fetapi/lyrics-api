@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
@@ -31,16 +31,14 @@ export const Home = {
   `,
   CampoParaLegenda: styled(Box)`
     margin-top: 30px;
-    animation: entra 1s ease-in-out forwards;
     position: relative;
     top: 50px;
     opacity: 0;
+    transition: all 0.5s ease-in-out;
 
-    @keyframes entra {
-      to {
-        top: 0;
-        opacity: 1;
-      }
+    &.active {
+      top: 0px;
+      opacity: 1;
     }
   `,
 };

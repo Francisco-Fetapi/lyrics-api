@@ -1,4 +1,6 @@
-const initialState = {};
+const initialState = {
+  lyric: "",
+};
 
 export default function AppReducer(state = initialState, { payload, type }) {
   switch (type) {
