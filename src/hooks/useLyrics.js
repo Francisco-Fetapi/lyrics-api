@@ -19,10 +19,16 @@ function useLyrics() {
         LoadingLinear.mostrar();
         try {
           let res = await API.getLegenda(artista, titulo);
-          Dispatch(SET_STATE("lyric", res.data.lyrics));
+          if (res.data.lyrics) {
+            Dispatch(SET_STATE("lyric", res.data.lyrics));
+          }
         } catch (err) {
-          alertar("ocorreu algum problema ao pesquisar", "error", 3);
-          console.log(err);
+          const erro = err.toString();
+          if (erro.includes("DISCONNECTED")) {
+            alertar("Falha na rede", "error", 3);
+          } else if (erro.includes("404")) {
+            alertar("Música não encontrada.", "error", 4);
+          }
         }
         LoadingLinear.ocultar();
       }
