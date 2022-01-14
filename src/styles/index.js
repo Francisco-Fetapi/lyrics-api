@@ -29,4 +29,18 @@ export const Home = {
       font-size: 80px;
     }
   `,
+  CampoParaLegenda: styled(Box)`
+    margin-top: 30px;
+    animation: entra 1s ease-in-out forwards;
+    position: relative;
+    top: 50px;
+    opacity: 0;
+
+    @keyframes entra {
+      to {
+        top: 0;
+        opacity: 1;
+      }
+    }
+  `,
 };
