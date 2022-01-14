@@ -24,7 +24,7 @@ export default function FormProcurarMusica() {
           artista: "",
           titulo: "",
         }}
-        onSubmit={(values, actions) => buscar(values, actions.LoadingLinear)}
+        onSubmit={(values, actions) => buscar(values, actions, LoadingLinear)}
       >
         <Form>
           <Home.FormProcuarMusica>
