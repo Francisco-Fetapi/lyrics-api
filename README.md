@@ -7,9 +7,10 @@
 <a href="https://github.com/Francisco-Fetapi/lyrics-api"><img alt="GitHub license" src="https://img.shields.io/github/license/Francisco-Fetapi/lyrics-api?style=plastic"></a>
 </p>
 
-![asset7](https://user-images.githubusercontent.com/74926014/175328630-78ba6691-2957-416b-9bea-27f889c1600b.PNG)
-
 Projeto realizado para exercitar o consumo de API's externas.😊
+<br />
+<br />
+![asset7](https://user-images.githubusercontent.com/74926014/175328630-78ba6691-2957-416b-9bea-27f889c1600b.PNG)
 
 ##
 
