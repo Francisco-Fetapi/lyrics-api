@@ -15,3 +15,5 @@ Projeto realizado para exercitar o consumo de API's externas.😊
 ##
 
 <a href="https://fetapilyrics.vercel.app">Clique aqui se quiseres ver o projeto rodando</a>
+
+`NOTA:` As requisições a API irão demorar um pouco para serem completadas.
